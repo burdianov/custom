@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Custom Project'),
 
     /*
     |--------------------------------------------------------------------------
@@ -133,6 +133,10 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
+    'developers' => [
+        'john@doe.com'
+    ],
 
     'providers' => [
 
