@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $medium = resolve('medium-sdk');
+    dd($medium);
+//    return view('welcome');
 });
 
 Route::get('/custom', function () {
