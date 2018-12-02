@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    $medium = resolve('medium-sdk');
-    dd($medium);
-//    return view('welcome');
+Route::middleware('test')->get('/', function () {
+//    dd(session()->get('test'));
+
+    /*$medium = resolve('medium-sdk');
+    dd($medium);*/
+    return view('welcome');
 });
 
 Route::get('/custom', function () {
