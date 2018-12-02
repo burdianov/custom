@@ -11,13 +11,23 @@
 |
 */
 
-Route::middleware('test')->get('/', function () {
+Route::get('/admin', function () {
+    if (!auth()->check()) {
+        throw new \App\Exceptions\HackerAlertException();
+    }
+});
+
+Route::get('/{id}', function (\Illuminate\Http\Request $request, $id) {
+    return \App\User::findOrFail($id);
+});
+
+//Route::middleware('test')->get('/', function () {
 //    dd(session()->get('test'));
 
     /*$medium = resolve('medium-sdk');
     dd($medium);*/
-    return view('welcome');
-});
+    //return view('welcome');
+//});
 
 Route::get('/custom', function () {
    //dd(config('app.developers'));
